@@ -52,11 +52,14 @@ http://localhost:8000. Opening the files directly with `file://` breaks the path
 1. **Content.** Everything in `[brackets]` is a placeholder: surname, intro, the meta
    description, and each page's paragraph and entries. Ask Ryan for the real text and
    don't invent biographical facts. Add or remove `<li>` entries freely; the layout handles any count.
-2. **Metadata.** Add a favicon (a simple monogram, or none), Open Graph/Twitter tags with the
-   title and description, and a canonical URL once the domain is known.
-3. **Deploy.** Any static host works (GitHub Pages, Cloudflare Pages, Netlify, Vercel).
-   Ask Ryan which host and domain he wants. Add a 404 page in the same style
-   (centred name, a "Not found" heading, a link home).
+2. **Metadata.** Done: canonical URLs and Open Graph/Twitter tags on every page. A favicon
+   is still open (a simple monogram, or none).
+3. **Deploy.** Done. Live at https://rmjshin.com via GitHub Pages from
+   `Rshin2024/rmjshin.com` (branch `main`, repo root). To update: commit and `git push`;
+   Pages rebuilds in about a minute. `CNAME` holds the domain; `_config.yml` keeps
+   `CLAUDE.md` and `README.md` off the live site. DNS is at Network Solutions: four A records
+   for `@` to GitHub's 185.199.108–111.153, and a `www` CNAME to `rshin2024.github.io`.
+   HTTPS is enforced. `404.html` is the not-found page.
 4. **Optional, only if asked:** a generator such as Eleventy or Astro, so entries can live in
    Markdown or data files. Output must stay identical, with no client-side JavaScript beyond the slideshow.
 
