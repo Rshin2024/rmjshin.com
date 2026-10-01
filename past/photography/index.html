@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preload" href="/fonts/cmu-serif-roman.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/cmu-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <title>Photography — Ryan Min June Shin</title>
+  <link rel="canonical" href="https://rmjshin.com/past/photography/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Photography — Ryan Min June Shin">
+  <meta property="og:description" content="Ryan Min June Shin. Born and raised in Seoul, studied math at Harvard, now working on Topos in San Francisco.">
+  <meta property="og:url" content="https://rmjshin.com/past/photography/">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <main class="page">
+    <a class="name" href="/">ryan min june shin</a>
+
+    <h1>Photography</h1>
+
+    <section class="album" aria-labelledby="album-home">
+      <h2 id="album-home">Home</h2>
+      <div class="viewer" aria-roledescription="carousel" aria-label="Home">
+        <div class="track" tabindex="0">
+          <figure><img src="/past/photography/home/01.webp" width="1691" height="1206" alt="A quilt drying on a rack on a concrete rooftop, the city stretching behind"></figure>
+          <figure><img src="/past/photography/home/02.webp" width="1322" height="1852" alt="A narrow alley of old shopfronts and tangled wires, a glass tower rising behind" loading="lazy"></figure>
+          <figure><img src="/past/photography/home/03.webp" width="1263" height="1770" alt="Two people resting under a tree beside the City Hall subway entrance, one under an umbrella" loading="lazy"></figure>
+          <figure><img src="/past/photography/home/04.webp" width="1933" height="1087" alt="A market stall hung with strings of dried yellow croaker, the vendor seated among them" loading="lazy"></figure>
+          <figure><img src="/past/photography/home/05.webp" width="1366" height="1843" alt="Diptych: a powerlifter on the platform at a 2022 meet, and a commuter holding the straps on a crowded subway" loading="lazy"></figure>
+          <figure><img src="/past/photography/home/06.webp" width="1933" height="1086" alt="Low brick apartment blocks at dusk, seen from a stream bed beneath an overpass" loading="lazy"></figure>
+          <figure><img src="/past/photography/home/07.webp" width="1745" height="1245" alt="Black and white: a curving park path at night, three figures standing in a pool of lamplight" loading="lazy"></figure>
+          <figure><img src="/past/photography/home/08.webp" width="1852" height="1321" alt="Black and white: apartment towers lit at night above a dark lawn" loading="lazy"></figure>
+          <figure><img src="/past/photography/home/09.webp" width="1932" height="683" alt="Diptych: a tree canopy seen from below, and tangled light trails at night" loading="lazy"></figure>
+          <figure><img src="/past/photography/home/10.webp" width="1324" height="945" alt="Cyanotype of the Han River skyline, brushed blue on white paper" loading="lazy"></figure>
+        </div>
+        <div class="controls">
+          <button class="prev" type="button" aria-label="Previous photo">←</button>
+          <span class="count" aria-live="polite"><span class="i">1</span> / <span class="n">10</span></span>
+          <button class="next" type="button" aria-label="Next photo">→</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="album" aria-labelledby="album-iceland">
+      <h2 id="album-iceland">Iceland</h2>
+      <div class="viewer" aria-roledescription="carousel" aria-label="Iceland">
+        <div class="track" tabindex="0">
+          <figure><img src="/past/photography/iceland/01.webp" width="2000" height="1334" alt="Black and white: an empty black-sand beach under low cloud, surf breaking along the shore"></figure>
+          <figure><img src="/past/photography/iceland/02.webp" width="2000" height="1334" alt="Black and white: a line of footprints across black sand toward snow-dusted cliffs" loading="lazy"></figure>
+          <figure><img src="/past/photography/iceland/03.webp" width="2000" height="1163" alt="Black and white: a flat-topped headland above black sand, footprints trailing off to the left" loading="lazy"></figure>
+          <figure><img src="/past/photography/iceland/04.webp" width="2000" height="1334" alt="Black and white: a wide plain of dark gravel and dry grass, snowy mountains beyond and a cliff edge at right" loading="lazy"></figure>
+          <figure><img src="/past/photography/iceland/05.webp" width="1443" height="2000" alt="Black and white: three people standing at the mouth of a sea cave, silhouetted against a white sky" loading="lazy"></figure>
+          <figure><img src="/past/photography/iceland/06.webp" width="1500" height="2000" alt="Black and white: boulders on the floor of an empty sea cave, the open shore beyond" loading="lazy"></figure>
+        </div>
+        <div class="controls">
+          <button class="prev" type="button" aria-label="Previous photo">←</button>
+          <span class="count" aria-live="polite"><span class="i">1</span> / <span class="n">6</span></span>
+          <button class="next" type="button" aria-label="Next photo">→</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="album" aria-labelledby="album-misc">
+      <h2 id="album-misc">Misc</h2>
+      <p class="empty">Choosing the rest.</p>
+    </section>
+
+    <nav aria-label="Sections">
+      <a href="/present/">Present</a><span class="sep" aria-hidden="true">·</span>
+      <a href="/harvard/">Harvard</a><span class="sep" aria-hidden="true">·</span>
+      <a href="/past/">Past</a><span class="sep" aria-hidden="true">·</span>
+      <a href="/blog/">Blog</a>
+    </nav>
+  </main>
+
+  <script>
+    // Progressive enhancement: without JS the track still scrolls and swipes.
+    document.querySelectorAll('.viewer').forEach(function (v) {
+      var track = v.querySelector('.track');
+      var slides = track.children;
+      var prev = v.querySelector('.prev'), next = v.querySelector('.next');
+      var out = v.querySelector('.i');
+      v.querySelector('.n').textContent = slides.length;
+
+      var target = null, settle;
+      function index() { return target !== null ? target : Math.round(track.scrollLeft / track.clientWidth); }
+      function go(i) {
+        target = (i + slides.length) % slides.length;
+        out.textContent = target + 1;
+        track.scrollTo({ left: target * track.clientWidth, behavior: 'smooth' });
+      }
+      function update() {
+        if (target === null) out.textContent = Math.round(track.scrollLeft / track.clientWidth) + 1;
+      }
+
+      prev.addEventListener('click', function () { go(index() - 1); });
+      next.addEventListener('click', function () { go(index() + 1); });
+      track.addEventListener('scroll', function () {
+        window.requestAnimationFrame(update);
+        clearTimeout(settle);
+        settle = setTimeout(function () { target = null; update(); }, 150);
+      }, { passive: true });
+      track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); go(index() - 1); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(index() + 1); }
+      });
+      // Click the left or right half of the photo to step through.
+      track.addEventListener('click', function (e) {
+        var r = track.getBoundingClientRect();
+        go(index() + (e.clientX - r.left < r.width / 2 ? -1 : 1));
+      });
+      // Keep the current photo centred if the window is resized.
+      window.addEventListener('resize', function () {
+        track.scrollTo({ left: (Number(out.textContent) - 1) * track.clientWidth });
+      });
+      v.classList.add('js');
+    });
+  </script>
+</body>
+</html>
